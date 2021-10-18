@@ -20,8 +20,12 @@ REPO = ("User / Bot is available on GitHub:\n"
     filters.command(["alive", "start"], COMMAND_HAND_LER) &
     f_onw_fliter
 )
-async def check_alive(_, message):
-    await message.reply_text(ALIVE)
+async def check_alive(bot, update):
+    await bot.send_photo(
+    photo="https://telegra.ph/file/0ebc281bc2696cd8bc255.jpg",
+    caption=ALIVE,
+    chat_id=update.chat.id
+)
 
 
 @Client.on_message(filters.command("help", COMMAND_HAND_LER) & f_onw_fliter)
